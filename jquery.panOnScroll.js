@@ -4,7 +4,9 @@ $.fn.panOnScroll = function(settingsOverrides){
     // options
 
         var settings = $.extend({
-            offset: 0.5
+            offset: 0.5,
+            docHeight: $(document).height(),
+            windowHeight: $(window).height()
        }, settingsOverrides);
        
        var targetElement = $(this);
@@ -17,8 +19,8 @@ $.fn.panOnScroll = function(settingsOverrides){
         
             var scrollPos = $(window).scrollTop();
         
-            var windowHeight = $(window).height();
-            var scrollHeight = $(document).height()-windowHeight;
+            var windowHeight = settings.windowHeight;
+            var scrollHeight = settings.docHeight - settings.windowHeight;
             
             var elementHeight = $(targetElement).height();
             var elementPosition = targetElement.offset().top;
