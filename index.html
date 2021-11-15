@@ -12,6 +12,7 @@
         
         body {
             font-family: -apple-system, helvetica, sans-serif;
+            zoom: 0.9;
         }
         
         .content {
@@ -80,7 +81,9 @@
     <script type="text/javascript">
     
         $(document).ready(function(){
-            $('.pan').panOnScroll();
+            $('.pan').panOnScroll({
+                zoom: $('body').css('zoom')
+            });
         });
     
     </script>

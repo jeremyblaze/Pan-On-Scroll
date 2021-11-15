@@ -9,7 +9,7 @@ $.fn.panOnScroll = function(settingsOverrides){
        }, settingsOverrides);
        
        var targetElement = $(this);
-       var zoom = settings.zoom;
+       var zoom = 2-settings.zoom;
            
     // plugin
     
@@ -23,7 +23,7 @@ $.fn.panOnScroll = function(settingsOverrides){
             var scrollHeight = $(document).height()*zoom - windowHeight;
             
             var elementHeight = $(targetElement).height();
-            var elementPosition = targetElement.offset().top;
+            var elementPosition = $(targetElement).offset().top;
         
         // calculations
         
